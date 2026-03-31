@@ -2,10 +2,11 @@
 <html>
 <head><title>Acceptation page for WHA Chat</title> <link rel="icon" type="image/x-icon" href="logo.png"></head>
 <body>
-<h1 style="text-align:center;">Accept terms for WHA Chat</h1>
+<h1 style="text-align:center;"id="title">Accept terms for WHA Chat</h1>
+<p style="text-align:center;" id="texto"></p>
 <p style="text-align:center;">1. Ask the owners before changing things.<br/>
 2. No cursing<br/>
-3. No spamming anything. (This includes GIFs, Messages, Links, etc... If anybody is caught spamming, they will be kicked.<br/>
+3. No spamming anything. (This includes GIFs, Messages, Links, etc... If anybody is caught spamm ing, they will be kicked.<br/>
 4. 9 managers at a time and 3 owners (Can change via a vote)<br/>
 5. No excessive emojis or faces or else you will be kicked from the chat.<br/>
 6. Do not change the emoji for the chat.<br/>
@@ -13,22 +14,31 @@
 8. You have to have the owners on your side before kicking.<br/>
 9. Don't remove these rules.<br/>
 10. (This rule must be viewed in the WHA Chat Guidelines <i>on</i> the chat)<br/>
-11. Before you kick, consult the owners. If you want to kick someone please Direct Message (James Adams, or Simon Peter Rhoades, or Hudson Klostermeyer) if you want to kick.<br/>
+11. Before you kick, consult the owners. If you want to kick someone please Direct Message  (James Adams, or Simon Peter Rhoades, or Hudson Klostermeyer) if you want to kick.<br/>
 12. If you know anybody in Wilson Hill Academy, then please invite them.<br/>
 13. BANNED LIST:<br/>
 14. Do not send huge message dumps or very long messages that flood the chat.<br/>
 15. No advertising anything.<br/>
 <p>
     <div style="display: flex; justify-content: center;">
-<button onclick="myFunction();">Accept</button>
+<button id="ided" onclick="myFunction();">Accept</button>
     </div>
 
 
 <script>
-  function myFunction() {
- alert('Good job, you have accepted the terms for the chat!')
- window.location.href = "https://chat.google.com/u/0/app/chat/AAQANMhthuI"
+    if (localStorage.getItem("clicked") == "ye") {
+    document.getElementById("ided").disabled = "true";
+     document.getElementById("ided").innerHTML = "Accepted already!";
+     document.getElementById("title").innerHTML = "You have accepted the terms already!";
+     document.getElementById("texto").innerHTML = "But if you must know the terms from here...";
+     document.getElementById("texto").style.color = "#808080";
 
+
+    }
+  function myFunction() {
+ alert('Good job, you have accepted the terms for the chat!') 
+ window.location.href = "https://chat.google.com/u/0/app/chat/AAQANMhthuI "
+ localStorage.setItem("clicked", "ye");
   }
 </script>
 
